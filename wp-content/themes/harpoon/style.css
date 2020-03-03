@@ -64,15 +64,44 @@ a, h3 {
 }
 
 .bg-1 {
-	position:relative;
-	overflow: hidden;
-	background:url('../harpoon/img/bg-1.jpg') no-repeat center;
-	height: 950px;  
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
+	/*
+	background-image:url('../harpoon/img/bg-1.jpg');
+  	background-size: 100%;  
+    background-position: center center;
+    background-repeat: no-repeat;
+ */
+   background: url('../harpoon/img/bg-1.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+/*
+  position:relative; 
+	overflow: hidden;
+	height: 950px;  
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;  */
+}
+/*
+.overlay {
+  background-color: #000; 
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1; 
+}
+*/
+.bg-1-container {
+/*	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important; 
+    overflow: hidden;
+    text-align: center; */
 }
 
 .bg-2 {
@@ -101,14 +130,7 @@ a, h3 {
   background-size: cover;
 }
 
-.bg-1-container {
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) !important; 
-    overflow: hidden;
-    text-align: center;
-}
+
 
 .outer{
      position: relative;
@@ -152,6 +174,7 @@ p {
 	color:white;
 	font-size: 1.167rem;
 	line-height: 50px;
+	margin:0 ! important;
 }
 
 .portfolio-title {
@@ -1128,7 +1151,7 @@ a.view-more-button  {
 
 a.view-more-button:after  { 
 	  content: "";
-	  position:absolute;
+	  position:absolute; 
 	  top:0;
 	  bottom:0;
 	  left:0;
@@ -1183,24 +1206,41 @@ hr.green{
 
 .bottom-column
 {
-	width:300px;
-    position: absolute;
+/*	width:300px;
+    position: absolute; 
     bottom: 0;
   	left: 50%;
 	margin-left: -150px;
+	*/
 } 
  
 .page-number{
+	background:url('../harpoon/img/page-1.png') no-repeat center;
 	z-index: 1;
 	width:12px;
 	height:180px;
-	position: absolute;
+	position: fixed; 
 	right:40px;
 	top:50%;
 	margin-top:-90px;
-
+	
 } 
 
+.page-number-2{
+	background:url('../harpoon/img/page-2.png') no-repeat center;
+}
+
+.page-number-3{
+	background:url('../harpoon/img/page-3.png') no-repeat center;
+}
+
+.page-number-4{
+	background:url('../harpoon/img/page-4.png') no-repeat center;
+}
+
+.page-number-5{
+	background:url('../harpoon/img/page-5.png') no-repeat center;
+}
 
 @media only screen and (max-width : 768px) {
 
@@ -1243,4 +1283,22 @@ hr.green{
 		.bg-2{
 			height: auto;
 		}
+}
+
+@keyframes bounce-animation{
+	from {margin-top:-10px;
+		opacity: 1;}
+	to{margin-top:10px;
+	opacity: 0.5;}
+}
+
+.up-and-down{
+	height: 45px;
+
+}
+
+.bounce {
+	animation-name: bounce-animation;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
 }
